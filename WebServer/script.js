@@ -1,3 +1,5 @@
+//This is a stupid comment
+
 // This example displays a marker at the center of Australia.
 // When the user clicks the marker, an info window opens.
        GOOGLE_MAPS_KEY = "AIzaSyDhCHwOpcFGA9t6yMul0XCEhhg2mKyJ5mM";
