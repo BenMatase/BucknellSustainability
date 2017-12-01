@@ -81,3 +81,17 @@ Install the `python-autopep8` package in Atom with either `apm install python-au
 Then to run the linter in Atom, highlight all of the text you want to format and then press `Ctrl-shift-p` and type in `autopep8` and then press `Enter` to format the Python code.
 
 You can also run it from the command line with `autopep8 [--in-place] [other-options] filename`.
+
+### HTML - htmlhint
+To install htmlhint run
+```
+cd WebServer
+npm install htmlhint
+```
+
+To run from the command line:
+```
+./node_modules/htmlhint/bin/htmlhint <file>
+```
+
+If you want to use it in Atom, install the atom package `linter-htmlhint` with either `apm install linter-htmlhint` or going through the GUI installer.
