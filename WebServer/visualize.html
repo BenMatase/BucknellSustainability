@@ -4,7 +4,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Info windows</title>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src = "https://code.highcharts.com/highcharts.js"></script>
     <script src="db.js"></script>
@@ -33,7 +33,7 @@
 
             //get sennsorId parameter from url string (?id=...)
             var result = parseQueryString(location.search);
-            var sensorIds = JSON.parse("[" + result.id + "]");  
+            var sensorIds = JSON.parse("[" + result.id + "]");
 
             //get info for each sensor selected
             var condition = "WHERE sensorId in (" + result.id + ") ORDER BY sensorId ASC;"
@@ -46,14 +46,14 @@
             //create chart
             chart = new Highcharts.Chart({
                 chart: {
-                     renderTo: "graphView", 
+                     renderTo: "graphView",
                      zoomType: 'x'
                   },
                 credits: {
                     enabled: false
                 },
                 title: {
-                    text: projectInfo.name 
+                    text: projectInfo.name
                 },
                 subtitle: {
                     text: "Highlight Region to Zoom - Click Series to Toggle On/Off"
@@ -83,11 +83,11 @@
                 var data = readDB("datahourly",condition,"*");
 
                 var nodes = [] //holds all datapoints for a given series
-                for(var j=0; j<data.length; j++) { 
+                for(var j=0; j<data.length; j++) {
 
                     var time = data[j].dateTime.split(/[- :]/);; //formatting date for highcharts to understand
                     var nodeDate = new Date(Date.UTC(time[0], time[1]-1, time[2], time[3], time[4]));
-                    
+
                     //individual datapoint (x,y)
                     var node = [];
                     node.push(nodeDate.getTime());
@@ -97,7 +97,7 @@
                 }
 
                 //add sensor[i] data as a series
-                chart.addSeries({                        
+                chart.addSeries({
                     name: sensorInfo[i].name + " (" + sensorInfo[i].units + ")",
                     data: nodes
                 });
