@@ -1,5 +1,7 @@
 root=$(pwd)
 
+echo "Allowing all html/css/js files to be viewed by user"
+
 cd WebServer/
 
 # chmod everthing for users
@@ -7,7 +9,11 @@ chmod o=r *.html
 chmod o=r *.js
 chmod o=r *.css
 
+cd WebServer/Style/css/
+chmod o=r *.css 
+
 # set up all of linting
+echo "Setting up all linting"
 cd $root
 
 pip install autopep8
