@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Bucknell Sustainability</title>
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="google-signin-client_id" content="438120227370-lb3gicq14kf8nl6gh6d0rgtnqassqoej.apps.googleusercontent.com">
+
+    <meta charset="utf-8">
+  </head>
+
+  <style>
+  </style>
+
+  <body>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script>
+      function onSignIn(googleUser) {
+          var profile = googleUser.getBasicProfile();
+          console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+          console.log('Name: ' + profile.getName());
+          console.log('Image URL: ' + profile.getImageUrl());
+          console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+      </script>
+  </body>
+
+
+</html>
