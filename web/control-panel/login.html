@@ -5,7 +5,7 @@
     <title>Bucknell Sustainability</title>
 
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta name="google-signin-client_id" content="438120227370-lb3gicq14kf8nl6gh6d0rgtnqassqoej.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="438120227370-65o4j0kmk9mbij1bp3dqvnts9dh4kfrf.apps.googleusercontent.com">
 
     <meta charset="utf-8">
   </head>
@@ -21,7 +21,7 @@
           var id_token = googleUser.getAuthResponse().id_token;
 
           var xhr = new XMLHttpRequest();
-          xhr.open('GET', 'https://eg.bucknell.edu/~bdm015/web/common/php/db.php');
+          xhr.open('POST', 'http://eg.bucknell.edu/~bdm015/Flower/web/common/php/test.php');
           xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
           xhr.onload = function() {
               console.log('Signed in as: ' + xhr.responseText);
