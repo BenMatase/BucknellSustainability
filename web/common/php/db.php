@@ -1,4 +1,20 @@
 <?php
+require_once 'vendor/autoload.php';
+
+// Get $id_token via HTTPS POST.
+$CLIENT_ID = '438120227370-lb3gicq14kf8nl6gh6d0rgtnqassqoej.apps.googleusercontent.com';
+$client = new Google_Client(['client_id' => $CLIENT_ID]);  // Specify the CLIENT_ID of the app that accesses the backend
+$payload = $client->verifyIdToken($id_token);
+if ($payload) {
+  $userid = $payload['sub'];
+  // If request specified a G Suite domain:
+  //$domain = $payload['hd'];
+  echo 'validated'
+} else {
+  // Invalid ID token
+  echo 'invalidated'
+}
+
 $config = json_decode(file_get_contents(__DIR__ . '/../../../config.json'));
 $link = mysqli_connect($config->DB_URL, $config->DB_USERNAME, $config->DB_PASSWORD, $config->DB_NAME);
 
